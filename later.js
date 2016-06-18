@@ -947,7 +947,7 @@ later = function() {
       D: [ 3, 1, 31 ],
       M: [ 4, 1, 12 ],
       Y: [ 6, 1970, 2099 ],
-      d: [ 5, 0, 7, 1 ]
+      d: [ 5, 0, 7 ]
     };
     function getValue(value, max) {
       return isNaN(value) ? NAMES[value] || null : Math.min(+value, max || 9999);

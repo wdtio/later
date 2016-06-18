@@ -47,7 +47,7 @@ later.parse.cron = function (expr, hasSeconds) {
     D: [3, 1, 31],      // day of month
     M: [4, 1, 12],      // month
     Y: [6, 1970, 2099], // year
-    d: [5, 0, 7, 1]     // day of week
+    d: [5, 0, 7]        // day of week
   };
 
   /**
