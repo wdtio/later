@@ -58,7 +58,8 @@ later.parse.cron = function (expr, hasSeconds) {
   * @param {Int,String} value: The value that should be parsed
   */
   function getValue(value, max) {
-    return isNaN(value) ? NAMES[value] || null : Math.min(+value, max || 9999);
+    var result = isNaN(value) ? NAMES[value] /*|| null*/ : Math.min(+value, max || 9999);
+    return result === undefined ? null : result;
   }
 
   /**

@@ -950,7 +950,8 @@ later = function() {
       d: [ 5, 0, 7 ]
     };
     function getValue(value, max) {
-      return isNaN(value) ? NAMES[value] || null : Math.min(+value, max || 9999);
+      var result = isNaN(value) ? NAMES[value] : Math.min(+value, max || 9999);
+      return result === undefined ? null : result;
     }
     function cloneSchedule(sched) {
       var clone = {}, field;

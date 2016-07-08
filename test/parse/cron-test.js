@@ -338,6 +338,11 @@ describe('Parse Cron', function() {
 			p.schedules[0].should.eql({d: [1]});
 		});
 
+		it('should parse 0 as Sunday', function() {
+			var p = parse('* * * * * 0', true);
+			p.schedules[0].should.eql({d: [1]});
+		});
+
 		it('should parse multiple values', function() {
 			var p = parse('* * * * * 1,2,5', true);
 			p.schedules[0].should.eql({d: [2,3,6]});
@@ -434,6 +439,11 @@ describe('Parse Cron', function() {
 		it('should parse a single value in words', function() {
 			var p = parse('* * * * * MON', true);
 			p.schedules[0].should.eql({d: [2]});
+		});
+
+		it('should parse SUN as Sunday', function() {
+			var p = parse('* * * * * SUN', true);
+			p.schedules[0].should.eql({d: [1]});
 		});
 
 		it('should parse multiple values in words', function() {
